@@ -23,14 +23,21 @@ label{
   color: #08ffd1;  
   font-size: 17px;  
 } 
-#Uname{  
+#Username{  
   width: 300px;  
   height: 30px;  
   border: none;  
   border-radius: 3px;  
   padding-left: 8px;  
 }  
-#Pass{  
+#Password{  
+  width: 300px;  
+  height: 30px;  
+  border: none;  
+  border-radius: 3px;  
+  padding-left: 8px;   
+} 
+#RepeatPassword{  
   width: 300px;  
   height: 30px;  
   border: none;  
