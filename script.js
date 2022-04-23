@@ -22,7 +22,9 @@ function redirectToRegister(){
 
 function handleResponse(response){
   if(response != "Wrong credentials or no such user"){
-    alert(response);
+    var id = response;
+    sessionStorage.setItem("userId", id);
+    document.location.href="file:///C:/Users/doman/Visual%20Studio%20Code/Web/mainWindow/index.html";
   }
   else alert("Blogas vartotojo vardas arba slaptažodis");
 }
