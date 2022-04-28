@@ -22,8 +22,11 @@ function redirectToRegister(){
 
 function handleResponse(response){
   if(response != "Wrong credentials or no such user"){
-    var id = response;
+    response = response.replace(/[|]/g, "");
+    var id = response[0];
+    var clicks = response [1];
     sessionStorage.setItem("userId", id);
+    sessionStorage.setItem("clicks", clicks);
     document.location.href="file:///C:/Users/doman/Visual%20Studio%20Code/Web/mainWindow/index.html";
   }
   else alert("Blogas vartotojo vardas arba slaptažodis");
