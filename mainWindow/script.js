@@ -20,7 +20,7 @@ function searchCity(){
 
 function searchApi(cityName){
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://api.weatherstack.com/current?access_key=c06ad3f845a12dbd88dc0b9d1aae653b&query=' + cityName, true);
+  xhr.open('GET', 'http://api.weatherstack.com/current?access_key=5c1b9f829b632be5ef2b76a162a22ab7&query=' + cityName, true);
   xhr.set
   xhr.onload = () => handleResponse(xhr);
   xhr.send(null)
