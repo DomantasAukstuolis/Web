@@ -26,15 +26,16 @@ function searchApi(cityName){
 function handleResponse(response){
   var json = response;
   var obj = JSON.parse(json);
-  let icon = JSON.stringify(obj["current"]["weather_icons"][0]);
+  let icon = JSON.stringify(obj["current"]["weather_icons"][0]).replace(/["]/g, "");
   let temperature = (obj["current"]["temperature"]);
   let weatherDescription = (obj["current"]["weather_descriptions"][0]);
   let windSpeed = (obj["current"]["wind_speed"]);
   let feelsLike = (obj["current"]["feelslike"]);
   console.log(icon);
+  console.log(temperature);
   document.getElementById("temperature").innerHTML = temperature + "°C";
   document.getElementById("feelsLike").innerHTML = feelsLike + "°C";
   document.getElementById("windSpeed").innerHTML = windSpeed + "m/s";
-  document.getElementById("weatherDescription").innerHTML = weatherDescription;
-  document.getElementById("weatherIconUrl").innerHTML = icon;
+  document.getElementById("image").src = icon;
+  // document.getElementById("weatherDescription").innerHTML = weatherDescription;
 }
