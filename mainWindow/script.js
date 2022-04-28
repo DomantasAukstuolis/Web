@@ -8,6 +8,7 @@ function checkId(){
     redirectToLogin();
     alert("Privalote prisijungti")
   }
+  document.getElementById("searches").innerHTML = "Searches: " + clickCounter;
 }
 function redirectToLogin(){
   document.location.href="file:///C:/Users/doman/Visual%20Studio%20Code/Web/index.html";
@@ -20,7 +21,7 @@ function searchCity(){
 
 function searchApi(cityName){
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://api.weatherstack.com/current?access_key=37d3cf93821f9925e3e63a1a43f9d92c&query=' + cityName, true);
+  xhr.open('GET', 'http://api.weatherstack.com/current?access_key=c06ad3f845a12dbd88dc0b9d1aae653b&query=' + cityName, true);
   xhr.set
   xhr.onload = () => handleResponse(xhr.responseText);
   xhr.send(null)
@@ -42,5 +43,13 @@ function handleResponse(response){
 }
 
 function updateUserClicks(){
-  
+  clickCounter++;
+  document.getElementById("searches").innerHTML = "Searches: " + clickCounter;
+  var xhr = new XMLHttpRequest();
+  xhr.open('PUT', 'http://localhost:8080/updateClicks/' + userid, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  // xhr.onload = () => handleResponse(xhr.responseText);
+  xhr.send(JSON.stringify({
+    'clicks': clickCounter
+  }));
 }
