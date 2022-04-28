@@ -1,7 +1,9 @@
 var userid;
+var clickCounter;
 
 function checkId(){
   userid = sessionStorage.getItem("userId");
+  clickCounter = sessionStorage.getItem("clicks");
   if(userid == null){
     redirectToLogin();
     alert("Privalote prisijungti")
@@ -13,6 +15,7 @@ function redirectToLogin(){
 function searchCity(){
   let cityName = document.getElementById("cityName").value;
   searchApi(cityName);
+  updateUserClicks();
 }
 
 function searchApi(cityName){
@@ -31,11 +34,13 @@ function handleResponse(response){
   let weatherDescription = (obj["current"]["weather_descriptions"][0]);
   let windSpeed = (obj["current"]["wind_speed"]);
   let feelsLike = (obj["current"]["feelslike"]);
-  console.log(icon);
-  console.log(temperature);
   document.getElementById("temperature").innerHTML = temperature + "°C";
   document.getElementById("feelsLike").innerHTML = feelsLike + "°C";
   document.getElementById("windSpeed").innerHTML = windSpeed + "m/s";
   document.getElementById("image").src = icon;
-  // document.getElementById("weatherDescription").innerHTML = weatherDescription;
+  document.getElementById("weatherDescription").innerHTML = weatherDescription;
+}
+
+function updateUserClicks(){
+  
 }
