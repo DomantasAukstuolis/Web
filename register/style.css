@@ -12,7 +12,8 @@ body
   margin: 20 0 0 450px;  
   padding: 80px;  
   background: #2f308a;  
-  border-radius: 15px ;   
+  border-radius: 15px ; 
+  text-align: center;
 }  
 h1{  
   text-align: center;  
@@ -20,7 +21,7 @@ h1{
   padding: 20px;  
 }  
 label{  
-  color: #08ffd1;  
+  color: #ffffff;  
   font-size: 17px;  
 } 
 #Username{  
