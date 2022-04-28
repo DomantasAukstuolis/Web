@@ -9,6 +9,7 @@
 </head>
 <body onload="checkId()">
   <h1> Weather app </h1>  
+  <div><input type="button" name="logOut" id="logOut" value="Log Out" onclick="logOut()"> </div>
   <div class="search">    
     <form id="search">    
         <label><b>Enter name of the City
@@ -27,6 +28,7 @@
   <table class="fl-table">
       <thead>
       <tr>
+          <th>Location</th>
           <th>Temperature</th>
           <th>Feels Like</th>
           <th>Wind Speed</th>
@@ -36,6 +38,7 @@
       </thead>
       <tbody>
       <tr>
+          <td id="location">Location</td>
           <td id="temperature">°C</td>
           <td id="feelsLike">°C</td>
           <td id="windSpeed">m/s</td>

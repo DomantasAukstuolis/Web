@@ -16,30 +16,35 @@ function redirectToLogin(){
 function searchCity(){
   let cityName = document.getElementById("cityName").value;
   searchApi(cityName);
-  updateUserClicks();
 }
 
 function searchApi(cityName){
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'http://api.weatherstack.com/current?access_key=c06ad3f845a12dbd88dc0b9d1aae653b&query=' + cityName, true);
   xhr.set
-  xhr.onload = () => handleResponse(xhr.responseText);
+  xhr.onload = () => handleResponse(xhr);
   xhr.send(null)
 }
 
-function handleResponse(response){
+function handleResponse(xhr){
+  response = xhr.responseText
   var json = response;
   var obj = JSON.parse(json);
+  if(obj["success"] != false){
   let icon = JSON.stringify(obj["current"]["weather_icons"][0]).replace(/["]/g, "");
   let temperature = (obj["current"]["temperature"]);
   let weatherDescription = (obj["current"]["weather_descriptions"][0]);
   let windSpeed = (obj["current"]["wind_speed"]);
   let feelsLike = (obj["current"]["feelslike"]);
+  let location = (obj["location"]["name"]);
+  document.getElementById("location").innerHTML = location;
   document.getElementById("temperature").innerHTML = temperature + "°C";
   document.getElementById("feelsLike").innerHTML = feelsLike + "°C";
   document.getElementById("windSpeed").innerHTML = windSpeed + "m/s";
   document.getElementById("image").src = icon;
   document.getElementById("weatherDescription").innerHTML = weatherDescription;
+  updateUserClicks();
+  } else alert("City not found");
 }
 
 function updateUserClicks(){
@@ -52,4 +57,8 @@ function updateUserClicks(){
   xhr.send(JSON.stringify({
     'clicks': clickCounter
   }));
+}
+
+function logOut(){
+  document.location.href="file:///C:/Users/doman/Visual%20Studio%20Code/Web/index.html";
 }

@@ -5,6 +5,12 @@ body
     background-color:#6abadeba;  
     font-family: 'Arial';  
 }  
+#logOut {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
 .search{  
   width: 382px;  
   overflow: hidden;  
