@@ -17,7 +17,7 @@ function userLogin(username, password){
 }
 
 function redirectToRegister(){
-  document.location.href="file:///C:/Users/doman/Visual%20Studio%20Code/Web/register/index.html";
+  document.location.href="http://127.0.0.1:5500/register/index.html";
 }
 
 function handleResponse(response){
@@ -27,7 +27,7 @@ function handleResponse(response){
     var clicks = response [1];
     sessionStorage.setItem("userId", id);
     sessionStorage.setItem("clicks", clicks);
-    document.location.href="file:///C:/Users/doman/Visual%20Studio%20Code/Web/mainWindow/index.html";
+    document.location.href="http://127.0.0.1:5500/mainWindow/index.html";
   }
   else alert("Blogas vartotojo vardas arba slaptažodis");
 }

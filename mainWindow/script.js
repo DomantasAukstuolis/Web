@@ -11,7 +11,7 @@ function checkId(){
   document.getElementById("searches").innerHTML = "Searches: " + clickCounter;
 }
 function redirectToLogin(){
-  document.location.href="file:///C:/Users/doman/Visual%20Studio%20Code/Web/index.html";
+  document.location.href="http://127.0.0.1:5500/index.html";
 }
 function searchCity(){
   let cityName = document.getElementById("cityName").value;
@@ -57,8 +57,4 @@ function updateUserClicks(){
   xhr.send(JSON.stringify({
     'clicks': clickCounter
   }));
-}
-
-function logOut(){
-  document.location.href="file:///C:/Users/doman/Visual%20Studio%20Code/Web/index.html";
 }

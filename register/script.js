@@ -37,13 +37,13 @@ function addNewUser(username, password){
 }
 
 function redirectToLogin(){
-  document.location.href="file:///C:/Users/doman/Visual%20Studio%20Code/Web/index.html";
+  document.location.href="http://127.0.0.1:5500/index.html";
 }
 
 function handleResponse(response){
   if(response != "Success") alert("Vartotojas tokiu vardu jau yra užregistruotas")
   else {
     alert("Vartotojas sėkmingai sukurtas");
-    document.location.href="file:///C:/Users/doman/Visual%20Studio%20Code/Web/index.html";
+    redirectToLogin();
   }
 }
