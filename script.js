@@ -13,7 +13,7 @@ function userLogin(username, password){
     'username': username,
     'password': password
   }));
-  
+
 }
 
 function redirectToRegister(){

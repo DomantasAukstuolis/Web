@@ -7,8 +7,41 @@
   <title>Weather App</title>
   <link rel="stylesheet" href="./style.css">
 </head>
-<body onload="checkId()">
-  <h1> Zdaaarova </h1>  
+<!-- <body onload="checkId()" -->
+  <h1> Weather app </h1>  
+  <div class="search">    
+    <form id="search">    
+        <label><b>Enter name of the City
+        <br><br> 
+        </label>    
+        <input type="text" name="cityName" id="cityName" placeholder="Vilnius">    
+        <br><br>    
+        <input type="button" name="searchButton" id="searchButton" value="Search City" onclick="searchCity()">       
+        <br><br>
+    </form>     
+</div>   
+<div class="table-wrapper">
+  <table class="fl-table">
+      <thead>
+      <tr>
+          <th>Temperature</th>
+          <th>Feels Like</th>
+          <th>Wind Speed</th>
+          <th>Weather Description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+          <td id="temperature">Content 1</td>
+          <td id="feelsLike">Content 1</td>
+          <td id="windSpeed">Content 1</td>
+          <td id="weatherDescription">Content 1
+            <img id="weatherIconUrl" src="https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png">
+          </td>
+      </tr>
+      <tbody>
+  </table>
+</div>  
 <script src="script.js"></script>  
 </body>
 </html>
